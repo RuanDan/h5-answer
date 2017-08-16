@@ -1,0 +1,62 @@
+/* CSS Document */
+
+@charset "UTF-8";
+*{ margin:0; padding:0; border:0;-webkit-touch-callout:none; -webkit-tap-highlight-color:transparent; -webkit-font-smoothing:antialiased;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav,ul,li,ol,dl,dt,dd { list-style-type:none;}
+html {width: 100%; height:100%; outline: none; -webkit-text-size-adjust: none;}
+body{font:1rem "Microsoft Yahei","宋体b8b\4f53","tahoma,arial"; color:#535353; background-size:cover; width: 100%; height: 100%;}
+h1,h2,h3,h4,h5,h6,th{font-size:0.8rem;font-weight:normal;}
+table,td,input{font-size:0.8rem;}
+table { border-collapse:collapse; border-spacing: 0;}
+input { font-size:0.8rem;}
+input,select{ vertical-align:middle;}
+a{text-decoration:none;}
+.flt{float:left;}
+.frt{float:right;}
+.clear:after{ clear:both; content: ''; display: block;}
+
+.none{display:none;}
+
+
+/***reset End***/
+
+
+
+.ly-plate {
+	position: relative;
+	width: 100%;
+	height: 256px;
+	margin: 65px auto 35px;
+}
+.rotate-bg {
+	width: 256px;
+	height: 256px;
+	background: url(../images/ly-plate.png);
+	background-size:cover;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -128px;
+
+}
+.ly-plate div.lottery-star {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 80px;
+	left: 118px;
+	/*text-indent:-999em;
+		overflow:hidden;
+		background:url(rotate-static.png);
+		-webkit-transform:rotate(0deg);*/
+	outline: none
+}
+.ly-plate div.lottery-star #lotteryBtn {
+	width:100%;
+	height:100%;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+ }

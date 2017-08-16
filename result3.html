@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class=" js-no-overflow-scrolling">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/H5FullscreenPage.css">
+<link rel="stylesheet" type="text/css" href="css/page-animation.css">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="H5FullscreenPage resultScreen">
+    <div class="H5FullscreenPage-wrap">
+        <div class="item result-page">
+        	<img class="part logo-s transparency" src="img/logo-s.png" width="50" height="50" data-delay="800"/>
+        	<div class="wrap block">
+        		<div class="part result-box spread">
+        			<div>
+        				<img class="part p transparency" src="img/result02-img.png" alt="" data-delay="1200"/>
+        				<img class="part p transparency tip" src="img/result02-img2.png" alt="" data-delay="1600"/>
+        			</div>
+        			<img class="part p transparency" src="img/result-text03.png" alt="" data-delay="1800"/>
+        		</div>
+        		<!--按钮-->
+    			<div class="part slideDown" data-delay="2400" >
+    				<a class="result-btn btn-again" href="question.html"></a>
+    				<a class="result-btn btn-lucky" href="lucky.html"></a>
+    			</div>
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript" src="js/H5FullscreenPage.js"></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript">
+    
+    H5FullscreenPage.init({'type':5,'pageShow' : function(dom){
+        
+    },'pageHide' : function(dom){
+        //console.log(dom);
+    },'useMusic' : {
+    		'autoPlay' : true,
+            'src' : 'audio/bg03.mp3'
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+	    function audioAutoPlay() {
+	        var audio = document.getElementById('audio');
+	            audio.play();
+	        document.addEventListener("WeixinJSBridgeReady", function () {
+	            audio.play();
+	        }, false);
+	    }
+	    audioAutoPlay();
+	});
+	$(function(){
+		setTimeout(function(){
+			$('.music').animate({'opacity':'1'},1000);
+		},1000)
+		
+	})
+    </script>
+</body>
+</html>

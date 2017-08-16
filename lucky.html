@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title></title>
+<link rel="stylesheet" type="text/css" href="lucky/style/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="lucky-page">
+	<img class="logo-s" src="img/logo-s.png" width="50" height="50"/>
+	<div class="wrap block">
+		<!--转盘-->
+		<div class="ly-plate">
+	      <div class="rotate-bg"></div>
+	      <div class="lottery-star"><img src="lucky/images/rotate-static.png" id="lotteryBtn"></div>
+	    </div>
+	    <!--中奖信息-->
+	    <!--如果中间此处需显示-->
+	    <div class="lucky-box win" style="display: block;">
+	    	<div class="tip-tit"></div>
+	    	<p class="tip"><i class="icon-laba"></i>恭喜您抽中<span class="color"><i id="win-price"></i>1个</span></p>
+	    </div>
+	    <!--中奖名单-->
+	    <div class="pb30">
+		    <div class="lucky-box">
+		    	<div class="name-tit"></div>
+		    	<div class="list_lh">
+			    	<ul>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    		<li><span class="user">186****245186****245</span><span>抽中</span><span class="prize color">乐高积木1个乐高积木1个</span></li>
+			    	</ul>
+		    	</div>
+		    </div>
+	    </div>
+	</div>
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript" src="lucky/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="lucky/js/global.js"></script>
+	<script type="text/javascript" src="lucky/js/awardRotate.js"></script>
+	<script type="text/javascript" src="lucky/js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="js/scroll.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+		    var timeOut = function(){  //超时函数
+		        $(".rotate-bg").rotate({
+		            angle:0, 
+		            duration: 10000, 
+		            animateTo: 2160, //这里是设置请求超时后返回的角度，所以应该还是回到最原始的位置，2160是因为我要让它转6圈，就是360*6得来的
+		            callback:function(){
+		                alert('网络超时')
+		            }
+		        }); 
+		    }; 
+		    var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+		        $('.rotate-bg').stopRotate();
+		        $(".rotate-bg").rotate({
+		            angle:0, 
+		            duration: 5000, 
+		            animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+		            callback:function(){
+						//此处写判断逻辑，下面做了个假例子
+						if(text){
+							$('#win-price').text(text);
+							//$('.win').show();
+						}else{
+							setTimeout(function(){
+								location.href = "share.html";
+							},3000);
+						}
+						
+		            }
+		        }); 
+		    };
+		     
+		    $("#lotteryBtn").rotate({ 
+		       bind: 
+		         { 
+		            click: function(){
+		                var time = [0,1];
+		                    time = time[Math.floor(Math.random()*time.length)];
+		                if(time==0){
+		                    rotateFunc(6,0,'身高墙贴')
+		                }
+		                if(time==1){
+		                    var data = [1,2,3,4,5,6,0]; //返回的数组
+		                        data = data[Math.floor(Math.random()*data.length)];
+		                    if(data==1){
+		                        rotateFunc(1,45,'乐高积木')
+		                    }
+		                    if(data==2){
+		                        rotateFunc(2,135,'亲子绘本')
+		                    }
+		                    if(data==3){
+		                        rotateFunc(3,180,'电子琴')
+		                    }
+		                    if(data==4){
+		                        rotateFunc(4,270,'家庭小药箱')
+		                    }
+		                    if(data==5){
+		                        rotateFunc(5,315,'拼图画板')
+		                    }
+		                    if(data==6){
+		                        rotateFunc(6,0,'身高墙贴')
+		                    }
+		                    if(data==0){
+		                        var angle = [90,225,];
+		                            angle = angle[Math.floor(Math.random()*angle.length)]
+		                        rotateFunc(0,angle,'')
+		                    }
+		                }
+		            }
+		         } 
+		        
+		    });
+		    //名单滚动
+		    $("div.list_lh").myScroll({
+				speed:40, 
+				rowHeight:30
+			});
+		     
+		});
+		
+	</script>
+</body>
+</html>
