@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class=" js-no-overflow-scrolling">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/H5FullscreenPage.css">
+<link rel="stylesheet" type="text/css" href="css/page-animation.css">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body class="H5FullscreenPage">
+    <div class="H5FullscreenPage-wrap">
+        <div class="item load-page">
+        	<div class="wrap block">
+        		<!--logo-->
+	            <img class="logo part zoomIn" src="img/logo.png" width="" height="" data-delay=""/>
+	            <!--loading-->
+	            <div class="loading spinner">
+	            	<div class="rect1"></div>
+				    <div class="rect2"></div>
+				    <div class="rect3"></div>
+				    <div class="rect4"></div>
+				    <div class="rect5"></div>
+				    <div class="rect6"></div>
+	            </div>
+	            <div class="percentage"><span></span> %</div>
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript" src="js/H5FullscreenPage.js"></script>
+    <script type="text/javascript" src="js/resLoader.js" ></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript">
+    
+    H5FullscreenPage.init({'type':5,'pageShow' : function(dom){
+        
+    },'pageHide' : function(dom){
+        //console.log(dom);
+    },'useMusic' : false,
+    });
+    
+//  $(function(){
+//  	//监听加载状态改变
+//		document.onreadystatechange = completeLoading;
+//		//加载状态为complete时跳转
+//		function completeLoading() {
+//			var percent = 0;
+//			var timer = null;
+//			timer = setInterval(function(){	
+//				progress();	
+//			},800);
+//			function progress(){
+//				if(percent < 90){
+//					percent = percent + 10;
+//					$('.percentage span').text(percent);
+//				}else{
+//					if (document.readyState == "complete") {
+//						clearInterval(timer);
+//						percent == 100;
+//						$('.percentage span').text(100);
+//						location.href="join.html";
+//				    }else{
+//				    	clearInterval(timer);
+//				    	$('.percentage span').text(90);
+//				    }
+//				};
+//				
+//			};
+//		};
+//  });
+	var loader = new resLoader({
+		resources : [
+			'img/bg.jpg',
+			'img/bg-loading.png',
+			'audio/bg.mp3',
+			'img/box01.png',
+			'img/box02.png',
+			'img/box03.png',
+			'img/btn-again.png',
+			'img/btn-close.png',
+			'img/btn-lucky.png',
+			'img/btn-share.png',
+			'img/btn-share-hover.png',
+			'img/btn-submit.png',
+			'img/ctc-info.png',
+			'img/icon-laba.png',
+			'img/logo-s.png',
+			'img/lucky-bg.png',
+			'img/lucky-info.png',
+			'img/modal-img.png',
+			'img/modal-tip.png',
+			'img/modal-tip2.png',
+			'img/modal-tip2-2.png',
+			'img/music-off.png',
+			'img/music-on.png',
+			'img/qrcode.jpg',
+			'img/remind.png',
+			'img/remind-text.png',
+			'img/result02-img.png',
+			'img/result02-img2.png',
+			'img/result-box-bg.png',
+			'img/result-text01.png',
+			'img/result-text02.png',
+			'img/result-text03.png',
+			'img/tit-zjmd.png',
+			'img/btn-start.png',
+			'img/btn-yes.png',
+			'img/element01.png',
+			'img/element02.png',
+			'img/element03.png',
+			'img/join-p1.png',
+			'img/join-p2.png',
+			'img/join-p3.png',
+			'img/join-pp.png',
+			'img/join-tit.png',
+			'img/logo.png',
+			'img/tit-q1-01.png',
+			'img/tit-q2-01.png',
+			'img/tit-q3-01.png',
+			'img/tit-q4-01.png',
+			'img/tit-q5-01.png',
+			'img/tit-q1-02.png',
+			'img/tit-q2-02.png',
+			'img/tit-q3-02.png',
+			'img/tit-q4-02.png',
+			'img/tit-q5-02.png',
+			'img/tit-q6-02.png',
+			'img/tit-q7-02.png',
+			'img/tit-q8-02.png',
+			'img/tit-q9-02.png',
+			'img/tit-q10-02.png',
+			'img/tit-q11-02.png',
+			'img/tit-q12-02.png',
+			'img/tit-q13-02.png',
+			'img/tit-q14-02.png',
+			'img/tit-q15-02.png',
+			'img/q1-text.png',
+			'img/q2-text.png',
+			'img/q3-text.png',
+			'img/q4-text.png',
+			'img/q5-text.png',
+			'img/q6-text.png',
+			'img/q7-text.png',
+			'img/q8-text.png',
+			'img/q9-text.png',
+			'img/q10-text.png',
+			'img/q11-text.png',
+			'img/q12-text.png',
+			'img/q13-text.png',
+			'img/q14-text.png',
+			'img/q15-text.png',
+			'img/q1-img.png',
+			'img/q2-img.png',
+			'img/q3-img.png',
+			'img/q4-img.png',
+			'img/q5-img.png',
+			'img/q6-img.png',
+			'img/q7-img.png',
+			'img/q8-img.png',
+			'img/q9-img.png',
+			'img/q10-img.png',
+			'img/q11-img.png',
+			'img/q12-img.png',
+			'img/q13-img.png',
+			'img/q14-img.png',
+			'img/q15-img.png',
+			'http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js',
+			'js/H5FullscreenPage.js',
+			'js/resLoader.js',
+			'js/common.js',
+			'css/H5FullscreenPage.css',
+			'css/page-animation.css',
+			'css/style.css',
+			'lucky/images/ly-plate.png',
+			'lucky/images/rotate-static.png',
+			'lucky/js/awardRotate.js',
+			'lucky/js/global.js',
+			'lucky/js/jquery.easing.min.js',
+			'lucky/js/jquery-1.10.2.js',
+			'lucky/style/style.css',
+			'audio/bg01.mp3',
+			'audio/bg02.mp3',
+			'audio/bg03.mp3',
+		],
+		onStart : function(total){
+			//console.log('start:'+total);
+		},
+		onProgress : function(current, total){
+			//console.log(current+'/'+total);
+			var percent = Math.round(current/total*100);
+			$('.percentage span').text(percent);
+		},
+		onComplete : function(total){
+			//alert('加载完毕:'+total+'个资源');
+			location.href="question.html";
+		}
+	});
+	
+	loader.start();
+    </script>
+</body>
+</html>
